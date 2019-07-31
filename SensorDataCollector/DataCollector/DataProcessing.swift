@@ -293,11 +293,11 @@ class Data {
         let jsonInfo = JsonUtil.modelToJson(totalInfo)
         print(jsonInfo)
 //        print(jsonInfo)
-//        NetworkManager.shared.request(requestType: .POST, urlString: "http://120.78.167.211:10086/ios/upload", parameters: jsonInfo as [String : AnyObject], completion: { (json) in
+//        NetworkManager.shared.request(requestType: .POST, urlString: "http://x.x.x.x:10086/ios/upload", parameters: jsonInfo as [String : AnyObject], completion: { (json) in
 //            print(json as! Any)
 //            status = String(describing: json!)
 //        })
-            Alamofire.request("http://120.78.167.211:10086/ios/upload", method: .post, parameters: jsonInfo, encoding: JSONEncoding.default).responseString { response in
+            Alamofire.request("http://x.x.x.x:10086/ios/upload", method: .post, parameters: jsonInfo, encoding: JSONEncoding.default).responseString { response in
                 let feedback : Feedback = JsonUtil.jsonToModel(response.result.value ?? JsonUtil.modelToJsonString(Feedback()),Feedback.self) as! Feedback
                 if let status = feedback.status{
                     if status == "success" {
