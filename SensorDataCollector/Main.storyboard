@@ -58,7 +58,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="pause" id="d9p-zc-Lex">
                             <connections>
-                                <action selector="stopCollectData:" destination="vkT-GE-jsT" id="r9T-zL-dzw"/>
+                                <action selector="stopCollectData:" destination="vkT-GE-jsT" id="4FD-tw-VE3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

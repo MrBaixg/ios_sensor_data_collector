@@ -10,6 +10,7 @@ import UIKit
 import Foundation
 import CoreMotion
 
+
 enum Frequency : String {
     case HZ_1 = "1 HZ"
     case HZ_10 = "10 HZ"
@@ -67,11 +68,13 @@ class SensorCollector: UIResponder {
         else{
             startMotionData()
             locationMonitor.startCollectLocationData()
-            startPedometerData()
-            startAltitudeData()
-            startProximityStatus()
-            bluetoothMonitor.startScanPeripheral()
+//            startPedometerData()
+//            startAltitudeData()
+//            startProximityStatus()
             
+//            bluetoothMonitor.startScanPeripheral()
+//            bluetoothMonitor.stopScanPeripheral()
+//            bluetoothMonitor.startScanPeripheral()
             
             isRunning = true
         }
@@ -81,10 +84,10 @@ class SensorCollector: UIResponder {
         if isRunning{
             stopMotionData()
             locationMonitor.stopCollectLocationData()
-            stopPedometerData()
-            stopAltitudeData()
-            stopProximityStatus()
-            bluetoothMonitor.stopScanPeripheral()
+//            stopPedometerData()
+//            stopAltitudeData()
+//            stopProximityStatus()
+//            bluetoothMonitor.stopScanPeripheral()
             
             isRunning = false
             return
@@ -201,7 +204,8 @@ class SensorCollector: UIResponder {
             curDevice.isProximityMonitoringEnabled = true
         }
         let defaultCenter = NotificationCenter.default
-        defaultCenter.addObserver(self, selector: #selector(self.proximityStateDidChange), name: UIDevice.proximityStateDidChangeNotification, object: nil)
+        defaultCenter.addObserver(self, selector: #selector(self.proximityStateDidChange), name: NSNotification.Name.UIDeviceProximityStateDidChange, object: nil)
+
     }
     
     // stop collect proximity status
@@ -215,18 +219,23 @@ class SensorCollector: UIResponder {
     
     public func fillRealtimeData(sensorData : Data) {
         //get the motion sensor data
-        if let data = self.motionManager.accelerometerData{
+        /*if let data = self.motionManager.accelerometerData{
             sensorData.accelerometerData = data.acceleration
         }
         if let data = self.motionManager.gyroData{
             sensorData.gyroscopeData = data.rotationRate
+        }*/
+        
+        if let motionData = motionManager.deviceMotion{
+            sensorData.accelerometerData = motionData.userAcceleration
+            sensorData.gyroscopeData = motionData.rotationRate
         }
         if let data = self.motionManager.magnetometerData{
             sensorData.magnetometerData = data.magneticField
         }
         
         sensorData.location = locationMonitor.getLocation()
-        
+        /*
         sensorData.pedometerData = self.pedometerData
         sensorData.altitudeData = self.altitudeData
         sensorData.activity = self.activity
@@ -241,8 +250,10 @@ class SensorCollector: UIResponder {
         let network = networkMonitor.getWifiInfo()
         sensorData.wifiSSID = network.ssid
         sensorData.wifiMacAddress = network.mac
+ */
+ 
     }
-    
+    /*
     public func setShakeStatus(status : String, sensorData : Data) {
         sensorData.shakeStatus = status
     }
@@ -254,6 +265,7 @@ class SensorCollector: UIResponder {
     public func setShakeTimes(time : Int, sensorData : Data) {
         sensorData.shakeTimes = getShakeTimes(sensordata: sensorData) + time
     }
+     */
     
     // listen the state change of proximity sensor.
     @objc func proximityStateDidChange(){

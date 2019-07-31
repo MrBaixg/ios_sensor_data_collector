@@ -48,7 +48,7 @@ class BluetoothMonitor: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate
                 }
             }
             )
-            RunLoop.main.add(timerBLEDevice, forMode: RunLoop.Mode.default)
+            RunLoop.main.add(timerBLEDevice, forMode: RunLoop.Mode.defaultRunLoopMode)
         }
         
     }

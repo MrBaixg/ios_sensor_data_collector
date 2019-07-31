@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Network
+import CoreTelephony
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

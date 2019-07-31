@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Alamofire
+
 class DataViewController: UITableViewController {
     
     var refreshTimer : Timer!
@@ -27,14 +29,19 @@ class DataViewController: UITableViewController {
         if self.canBecomeFirstResponder {
             self.becomeFirstResponder()
         }
+        Alamofire.request("https://www.baidu.com")
     }
     
     @IBAction func startCollectData(_ sender: Any) {
+        self.dataProcessing.sensorCollector.startCollectSensorData()
         if refreshTimer != nil{
             refreshTimer.fire()
-        }
-        else{
-            self.dataProcessing.sensorCollector.startCollectSensorData()
+        }else{
+            self.sensorNameList = []
+            self.sensorValueList = []
+            self.sensorNameList.append("Has began, please wait.")
+            self.sensorValueList.append("")
+            self.tableView.reloadData()
             refreshTimer = Timer.scheduledTimer(withTimeInterval: 6, repeats: true, block: { (refreshTimer) in
                 (self.sensorNameList, self.sensorValueList) = self.dataProcessing.updateData()
                 if self.sensorNameList.count != self.sensorValueList.count{
@@ -55,12 +62,20 @@ class DataViewController: UITableViewController {
                 }
                 self.tableView.reloadData()
             })
-            
         }
     }
     
     @IBAction func stopCollectData(_ sender: Any) {
         self.dataProcessing.sensorCollector.stopCollectSensorData()
+        if refreshTimer != nil{
+            refreshTimer.invalidate()
+            refreshTimer = nil
+        }
+        self.sensorNameList = []
+        self.sensorValueList = []
+        self.sensorNameList.append("")
+        self.sensorValueList.append("Has stopped!")
+        self.tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,18 +96,18 @@ class DataViewController: UITableViewController {
     }
     
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        self.dataProcessing.sensorCollector.setShakeStatus(status: "ShakeBegan", sensorData: self.dataProcessing.data)
+//        self.dataProcessing.sensorCollector.setShakeStatus(status: "ShakeBegan", sensorData: self.dataProcessing.data)
 
     }
     
     override func motionCancelled(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        self.dataProcessing.sensorCollector.setShakeStatus(status: "ShakeCancelled", sensorData: self.dataProcessing.data)
+//        self.dataProcessing.sensorCollector.setShakeStatus(status: "ShakeCancelled", sensorData: self.dataProcessing.data)
 
     }
     
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        self.dataProcessing.sensorCollector.setShakeStatus(status: "ShakeEnded", sensorData: self.dataProcessing.data)
-        self.dataProcessing.sensorCollector.setShakeTimes(time: 1, sensorData: self.dataProcessing.data)
+//        self.dataProcessing.sensorCollector.setShakeStatus(status: "ShakeEnded", sensorData: self.dataProcessing.data)
+//        self.dataProcessing.sensorCollector.setShakeTimes(time: 1, sensorData: self.dataProcessing.data)
     }
 
 

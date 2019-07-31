@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA80610A21F1D488005251E6 /* JsonUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA80610921F1D488005251E6 /* JsonUtil.swift */; };
+		CA80610C21F1D49D005251E6 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA80610B21F1D49D005251E6 /* BaseModel.swift */; };
 		CAA1022621EC30F6003982E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA1022521EC30F6003982E9 /* AppDelegate.swift */; };
 		CAA1022D21EC30F6003982E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAA1022C21EC30F6003982E9 /* Assets.xcassets */; };
 		CAA1024F21EC7C0B003982E9 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA1024E21EC7C0B003982E9 /* SettingViewController.swift */; };
@@ -20,9 +22,15 @@
 		CAA1027321EED8E8003982E9 /* BluetoothMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA1027221EED8E7003982E9 /* BluetoothMonitor.swift */; };
 		CAA1027921EF0A97003982E9 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAA1027821EF0A97003982E9 /* NetworkMonitor.swift */; };
 		CAFB498D21EF0F0D00FACF54 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFB498C21EF0F0D00FACF54 /* ExternalAccessory.framework */; };
+		F4F367687648EC1B8C3C838D /* Pods_SensorDataCollector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999B267A6F375E5ABE56950E /* Pods_SensorDataCollector.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		999B267A6F375E5ABE56950E /* Pods_SensorDataCollector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorDataCollector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EFEEF0DEA559EC7424D9B7D /* Pods-SensorDataCollector.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorDataCollector.debug.xcconfig"; path = "Target Support Files/Pods-SensorDataCollector/Pods-SensorDataCollector.debug.xcconfig"; sourceTree = "<group>"; };
+		AAB6A39C3EDBADDBAE842C52 /* Pods-SensorDataCollector.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorDataCollector.release.xcconfig"; path = "Target Support Files/Pods-SensorDataCollector/Pods-SensorDataCollector.release.xcconfig"; sourceTree = "<group>"; };
+		CA80610921F1D488005251E6 /* JsonUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtil.swift; sourceTree = "<group>"; };
+		CA80610B21F1D49D005251E6 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		CAA1022221EC30F6003982E9 /* SensorDataCollector.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorDataCollector.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAA1022521EC30F6003982E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAA1022C21EC30F6003982E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,18 +56,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAFB498D21EF0F0D00FACF54 /* ExternalAccessory.framework in Frameworks */,
+				F4F367687648EC1B8C3C838D /* Pods_SensorDataCollector.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8677F77B486717417793D825 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9EFEEF0DEA559EC7424D9B7D /* Pods-SensorDataCollector.debug.xcconfig */,
+				AAB6A39C3EDBADDBAE842C52 /* Pods-SensorDataCollector.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CAA1021921EC30F6003982E9 = {
 			isa = PBXGroup;
 			children = (
 				CAA1022421EC30F6003982E9 /* SensorDataCollector */,
 				CAA1022321EC30F6003982E9 /* Products */,
 				CAA1026B21EEC819003982E9 /* Frameworks */,
+				8677F77B486717417793D825 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +124,8 @@
 				CAA1026021ED75B6003982E9 /* DataProcessing.swift */,
 				CAA1026621EDC1DD003982E9 /* LocationMonitor.swift */,
 				CAA1026821EDCD9F003982E9 /* Utils.swift */,
+				CA80610921F1D488005251E6 /* JsonUtil.swift */,
+				CA80610B21F1D49D005251E6 /* BaseModel.swift */,
 			);
 			path = DataCollector;
 			sourceTree = "<group>";
@@ -113,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				CAFB498C21EF0F0D00FACF54 /* ExternalAccessory.framework */,
+				999B267A6F375E5ABE56950E /* Pods_SensorDataCollector.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,9 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAA1023421EC30F6003982E9 /* Build configuration list for PBXNativeTarget "SensorDataCollector" */;
 			buildPhases = (
+				38B02EC9FF2032AF458582CE /* [CP] Check Pods Manifest.lock */,
 				CAA1021E21EC30F6003982E9 /* Sources */,
 				CAA1021F21EC30F6003982E9 /* Frameworks */,
 				CAA1022021EC30F6003982E9 /* Resources */,
+				27A6EB1B33838ED5E8024A13 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +180,9 @@
 							};
 							com.apple.DataProtection = {
 								enabled = 0;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
 							};
 							com.apple.WAC = {
 								enabled = 1;
@@ -195,6 +222,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		27A6EB1B33838ED5E8024A13 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SensorDataCollector/Pods-SensorDataCollector-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SQLite.swift/SQLite.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SQLite.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SensorDataCollector/Pods-SensorDataCollector-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		38B02EC9FF2032AF458582CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SensorDataCollector-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CAA1021E21EC30F6003982E9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -202,6 +282,7 @@
 			files = (
 				CAA1025121EC7C3C003982E9 /* DataViewController.swift in Sources */,
 				CAA1025F21ECA76F003982E9 /* SensorCollector.swift in Sources */,
+				CA80610C21F1D49D005251E6 /* BaseModel.swift in Sources */,
 				CAA1022621EC30F6003982E9 /* AppDelegate.swift in Sources */,
 				CAA1026921EDCD9F003982E9 /* Utils.swift in Sources */,
 				CAA1026121ED75B6003982E9 /* DataProcessing.swift in Sources */,
@@ -209,6 +290,7 @@
 				CAA1026721EDC1DD003982E9 /* LocationMonitor.swift in Sources */,
 				CAA1027921EF0A97003982E9 /* NetworkMonitor.swift in Sources */,
 				CAA1027321EED8E8003982E9 /* BluetoothMonitor.swift in Sources */,
+				CA80610A21F1D488005251E6 /* JsonUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,43 +417,45 @@
 		};
 		CAA1023521EC30F6003982E9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EFEEF0DEA559EC7424D9B7D /* Pods-SensorDataCollector.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SensorDataCollector/SensorDataCollector.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JM88F2DV6J;
+				DEVELOPMENT_TEAM = NJ59FBL6B8;
 				INFOPLIST_FILE = SensorDataCollector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.baixg.SensorDataCollector;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cqucs.SensorDataCollector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SensorDataCollector/DataCollector/SensorDataCollector-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		CAA1023621EC30F6003982E9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AAB6A39C3EDBADDBAE842C52 /* Pods-SensorDataCollector.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SensorDataCollector/SensorDataCollector.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = JM88F2DV6J;
+				DEVELOPMENT_TEAM = NJ59FBL6B8;
 				INFOPLIST_FILE = SensorDataCollector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.baixg.SensorDataCollector;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cqucs.SensorDataCollector;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SensorDataCollector/DataCollector/SensorDataCollector-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

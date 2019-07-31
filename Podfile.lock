@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (4.8.2)
+  - HandyJSON (5.0.0-beta.1)
+  - SAMKeychain (1.5.3)
+  - SQLite.swift (0.12.0):
+    - SQLite.swift/standard (= 0.12.0)
+  - SQLite.swift/standard (0.12.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - HandyJSON (= 5.0.0-beta.1)
+  - SAMKeychain
+  - SQLite.swift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - HandyJSON
+    - SAMKeychain
+    - SQLite.swift
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  HandyJSON: 582477127ab3ab65bd2e471815f1a7b846856978
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
+  SQLite.swift: 7cad9db150a03716336e69469ec9559c85aece5b
+
+PODFILE CHECKSUM: 6544af25ec8c28fc54add858c9fd138fb7fc70f6
+
+COCOAPODS: 1.6.0
